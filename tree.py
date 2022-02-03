@@ -16,11 +16,10 @@ duration = 60  # seconds
 def light_up_tree(indata, outdata, frames, time, status):
     volume_norm = int(np.linalg.norm(indata)*10)
     
-    
     max_volume = 100
     
-    if volume_norm >= 100:
-        volume_norm = 100
+    if volume_norm >= max_volume:
+        volume_norm = max_volume
     
     volume_to_leds = int((volume_norm/max_volume)*25)
 
